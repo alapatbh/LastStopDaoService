@@ -2,10 +2,7 @@ package com.ls.microservices.LastStopDAOService.Controller;
 
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,17 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ls.microservices.LastStopDAOService.Beans.Course;
-import com.ls.microservices.LastStopDAOService.Respository.LastStopDaoRepository;
+import com.ls.microservices.LastStopDAOService.Respository.CourseRepository;
 
 @RestController
 @RequestMapping("/Courses")
-public class MainDaoSeriviceController {
+public class CourceDaoController {
 	
 	@Autowired
-	private LastStopDaoRepository lastStopDao;
-	
-	@Autowired
-	DataSource dataSource;
+	private CourseRepository lastStopDao;
 	
 	@GetMapping(path="/get")
 	public List<Course> getAllCources(){
@@ -41,8 +35,8 @@ public class MainDaoSeriviceController {
 		lastStopDao.save(course);
 	}
 	
-	@GetMapping(path="/delete/{id}")
+	/*@GetMapping(path="/delete/{id}")
 	public Course deleteCourse(@PathVariable("id") String id) {
 		return lastStopDao.deleteByCourseId(Integer.parseInt(id));
-	}
+	}*/
 }
