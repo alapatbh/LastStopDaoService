@@ -1,4 +1,4 @@
-package com.ls.microservices.LastStopDAOService;
+package com.ls.microservices.LastStopDAOService.Controller;
 
 import java.util.List;
 
