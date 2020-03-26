@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Question {
 	
 	@Id
-	@Column(name="question_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="question_id",insertable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int questionId;
 	
 	@Column(name="sub_id")
@@ -27,6 +27,18 @@ public class Question {
 	
 	@Column(name="enable")
 	private char enable;
+
+	@Column(name="difficulty")
+	private char difficulty;
+	
+	
+	public char getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(char difficulty) {
+		this.difficulty = difficulty;
+	}
 
 	public int getQuestionId() {
 		return questionId;
@@ -68,4 +80,10 @@ public class Question {
 		this.enable = enable;
 	}
 
+	@Override
+	public String toString() {
+		return "Question [questionId=" + questionId + ", topicId=" + topicId + ", question=" + question + ", isPublic="
+				+ isPublic + ", enable=" + enable + ", difficulty=" + difficulty + "]";
+	}
+	
 }

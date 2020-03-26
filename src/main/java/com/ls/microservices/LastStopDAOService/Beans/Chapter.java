@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Chapter {
 
 	@Id
-	@Column(name="branch_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="branch_id",insertable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int chapterId;
 	
 	@Column(name="branch_name")
@@ -45,4 +45,11 @@ public class Chapter {
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
+
+	@Override
+	public String toString() {
+		return "Chapter [chapterId=" + chapterId + ", chapterName=" + chapterName + ", courseId=" + courseId + "]";
+	}
+	
+	
 }

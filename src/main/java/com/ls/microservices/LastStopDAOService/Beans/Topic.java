@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Topic {
 
 	@Id
-	@Column(name="sub_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="sub_id",insertable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int topicId;
 	
 	@Column(name="branch_id")

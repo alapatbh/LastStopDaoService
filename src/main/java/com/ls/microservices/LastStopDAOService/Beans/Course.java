@@ -14,8 +14,8 @@ import javax.validation.constraints.Size;
 public class Course {
 	
 	@Id
-	@Column(name="main_id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="main_id",insertable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int courseId;
 	
 	@Column(name="course_name")
