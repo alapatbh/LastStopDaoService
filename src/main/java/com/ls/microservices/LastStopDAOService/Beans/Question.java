@@ -31,7 +31,16 @@ public class Question {
 	@Column(name="difficulty")
 	private char difficulty;
 	
+	private String answers;
 	
+	public String getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(String answers) {
+		this.answers = answers;
+	}
+
 	public char getDifficulty() {
 		return difficulty;
 	}
