@@ -15,23 +15,23 @@ import com.ls.microservices.LastStopDAOService.Respository.ChapterRepository;
 
 @RestController
 @RequestMapping(value="/Chapters")
-public class ChapterDaoController {
+class ChapterDaoController {
 	
 	@Autowired
 	ChapterRepository chapterRepository;
 	
 	@GetMapping(path="/get")
-	public List<Chapter> getAllChapter(){
+	List<Chapter> getAllChapter(){
 		return (List<Chapter>) chapterRepository.findAll(); 
 	}
 	
 	@GetMapping(path="/getByCourseId/{id}")
-	public List<Chapter> getAllChapterByCourseId(@PathVariable("id") String courseId){
+	List<Chapter> getAllChapterByCourseId(@PathVariable("id") String courseId){
 		return chapterRepository.findBycourseId(Integer.parseInt(courseId));
 	}
 	
 	@PostMapping(path="/post")
-	public void insertChapter(@RequestBody Chapter chapter){
+	void insertChapter(@RequestBody Chapter chapter){
 		chapterRepository.save(chapter);
 	}
 }

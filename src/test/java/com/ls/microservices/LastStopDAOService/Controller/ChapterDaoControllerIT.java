@@ -1,4 +1,4 @@
-package com.ls.microservices.LastStopDAOService;
+package com.ls.microservices.LastStopDAOService.Controller;
 
 import com.ls.microservices.LastStopDAOService.Controller.ChapterDaoController;
 import com.ls.microservices.LastStopDAOService.Respository.ChapterRepository;
@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ChapterDaoController.class)
-class ControllerIT {
+class ChapterDaoControllerIT {
 	
 	@Autowired
 	private MockMvc mvc;
