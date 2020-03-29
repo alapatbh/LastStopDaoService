@@ -13,11 +13,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.ls.microservices.LastStopDAOService.Controller.ChapterDaoController;
 import com.ls.microservices.LastStopDAOService.Respository.ChapterRepository;
 
-@ExtendWith(SpringExtension.class)
 @WebMvcTest(ChapterDaoController.class)
 public class TestControllerTest {
 	
@@ -29,13 +29,13 @@ public class TestControllerTest {
 
 	@Test
 	public void testGetAllChaptersByCourseId() throws Exception {
-		when(chapterRepository.findBycourseId(anyInt())).thenReturn(new ArrayList<>());
+		when(chapterRepository.findBycourseId(anyInt())).thenReturn(Collections.emptyList());
 		mvc.perform(get("/Chapters/getByCourseId/1")).andExpect(status().isOk());
 	}
 	
 	@Test
 	public void testGetAllChapters() throws Exception {
-		when(chapterRepository.findAll()).thenReturn(new ArrayList<>());
+		when(chapterRepository.findAll()).thenReturn(Collections.emptyList());
 		mvc.perform(get("/Chapters/get")).andExpect(status().isOk());
 	}
 	
