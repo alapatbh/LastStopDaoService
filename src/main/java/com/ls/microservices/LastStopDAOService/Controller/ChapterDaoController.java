@@ -27,7 +27,7 @@ public class ChapterDaoController {
 	
 	@GetMapping(path="/getByCourseId/{id}")
 	public List<Chapter> getAllChapterByCourseId(@PathVariable("id") String courseId){
-		return (List<Chapter>) chapterRepository.findBycourseId(Integer.parseInt(courseId)); 
+		return chapterRepository.findBycourseId(Integer.parseInt(courseId));
 	}
 	
 	@PostMapping(path="/post")

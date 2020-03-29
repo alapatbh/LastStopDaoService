@@ -10,6 +10,6 @@ import com.ls.microservices.LastStopDAOService.Beans.Question;
 @Repository
 public interface QuestionRepository extends CrudRepository<Question, Long> {
 	
-	public Question findByQuestionId(int id);
-	public List<Question> findByTopicId(int id);
+	Question findByQuestionId(int id);
+	List<Question> findByTopicId(int id);
 }
