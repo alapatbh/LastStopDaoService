@@ -10,6 +10,6 @@ import com.ls.microservices.LastStopDAOService.Beans.Chapter;
 @Repository
 public interface ChapterRepository extends CrudRepository<Chapter, Long> {
 	
-	public Chapter findByChapterId(int id);
-	public List<Chapter> findBycourseId(int id);
+	Chapter findByChapterId(int id);
+	List<Chapter> findBycourseId(int id);
 }

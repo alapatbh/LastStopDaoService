@@ -8,7 +8,7 @@ import com.ls.microservices.LastStopDAOService.Beans.Course;
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Long> {
 	
-	public Course findByCourseId(int id);
+	Course findByCourseId(int id);
 	
 	//public Course deleteByCourseId(int id);
 	
